@@ -2,12 +2,27 @@ public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        System.out.println("=========================================");
-        System.out.println(" Welcome to Palindrome Checker System ");
-        System.out.println("=========================================");
-        System.out.println("Application Version: 1.6");
-        System.out.println("System started successfully.");
-        System.out.println("=========================================");
+        String text = "madam";
+
+        boolean isPalindrome = true;
+
+        int left = 0;
+        int right = text.length() - 1;
+
+        while (left < right) {
+            if (text.charAt(left) != text.charAt(right)) {
+                isPalindrome = false;
+                break;
+            }
+            left++;
+            right--;
+        }
+
+        if (isPalindrome) {
+            System.out.println("The string \"" + text + "\" is a palindrome.");
+        } else {
+            System.out.println("The string \"" + text + "\" is NOT a palindrome.");
+        }
 
     }
 }
